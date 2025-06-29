@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import Home from "./Component/Home/Home";
+import Navbar from "./Component/Navbar/Navbar";
+import About from "./Component/About/About";
+import Footer from "./Component/Footer/Footer";
+import Projects from "./Component/Projects/Projects";
+import Contact from "./Component/Contact/Contact";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="fixed w-full h-20 inset-0 top-0 z-50 bg-neutral-900/10 ">
+        <Navbar />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <section
+        id="home"
+        className="bg-[url('https://i.postimg.cc/D0N8WjyT/hero-banner-img-1.webp')] bg-cover bg-center bg-no-repeat"
+      >
+        <Home />
+      </section>
+
+      <section className="scroll-smooth bg-neutral-800 text-white">
+        {/* Other sections */}
+        <section id="about" className="scroll-mt-24 py-16">
+          <About />
+        </section>
+        <section id="projects" className="scroll-mt-24 py-16">
+          <Projects />
+        </section>
+        <section id="contact" className="scroll-mt-24 py-16">
+          <Contact />
+        </section>
+        <section id="footer">
+          <Footer />
+        </section>
+      </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

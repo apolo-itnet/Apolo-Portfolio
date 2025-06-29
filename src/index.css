@@ -31,6 +31,26 @@
   font-family: "Poppins", sans-serif;
 }
 
-html{
+html {
   scroll-behavior: smooth;
+}
+
+
+
+.animate-text-fill {
+  background: linear-gradient(90deg, #0ea5e9, #22c55e, #a855f7);
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textFill 3s infinite linear;
+}
+
+@keyframes textFill {
+  0% {
+    background-position: -100%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }
