@@ -1,0 +1,38 @@
+:root{
+  --count : 4;
+}
+
+@keyframes txtAnim {
+  25%, 100% {
+    display: none;
+  }
+}
+
+@keyframes txtBeAnim {
+  10%, 100% {
+    width: 0;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+
+.animated-designation span {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  -webkit-text-stroke: 0.05rem #10b981;
+  animation: txtAnim calc(5s * var(--count)) linear infinite;
+  animation-delay: calc(-5s * var(--i));
+}
+
+.animated-designation span::before {
+  content: attr(data-text);
+  position: absolute;
+  color: #10b981;
+  border-right: 0.5px solid #10b981;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: txtBeAnim 5s linear infinite;
+}

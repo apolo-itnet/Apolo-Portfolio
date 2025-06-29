@@ -1,26 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import "tailwindcss";
+@plugin "daisyui";
+
 @font-face {
   font-family: 'chillax';
-  src:  url('../src/assets/Fonts/Chillax-Variable.ttf') format('truetype');
+  src: url('../src/assets/Fonts/Chillax-Variable.ttf') format('truetype');
   font-weight: 200 700;
   font-display: swap;
   font-style: normal;
 }
 
-
-@import "tailwindcss";
-@plugin "daisyui";
-
-
-@theme{
-  --font-chillax: 'chillax', "sans-serif";
-}
-
 @layer components {
-  .res-p {
+  .res-pad {
     @apply px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-20;
   }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --font-chillax: 'chillax', "sans-serif";
 }
 
 .bebas {
@@ -31,26 +34,14 @@
   font-family: "Poppins", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+.p-color {
+  color: #f8fafc;
+}
+.s-color {
+  color: #10b981;
 }
 
-
-
-.animate-text-fill {
-  background: linear-gradient(90deg, #0ea5e9, #22c55e, #a855f7);
-  background-size: 200%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: textFill 3s infinite linear;
+.g-color {
+  color: #a1a1aa;
 }
 
-@keyframes textFill {
-  0% {
-    background-position: -100%;
-  }
-  100% {
-    background-position: 100%;
-  }
-}
