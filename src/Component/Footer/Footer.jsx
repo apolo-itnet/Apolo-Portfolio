@@ -9,10 +9,10 @@ const Footer = () => {
       </aside>
 
       <nav className="flex justify-between items-center gap-4">
-        <a href="https://github.com/" target="_blank">
+        <a href="https://github.com/apolo-itnet" target="_blank">
           <SiGithub />
         </a>
-        <a href="https://www.linkedin.com/" target="_blank">
+        <a href="https://www.linkedin.com/in/apolo-itnet-bd" target="_blank">
           <SiLinkedin />
         </a>
         <a href="https://www.facebook.com/" target="_blank">
