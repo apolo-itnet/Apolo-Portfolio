@@ -2,8 +2,12 @@ import React from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
 import { slideLeft, slideRight } from "../../Utility/Animation";
+import useScrollAnimation from "../../Utility/UseScrollAnm";
 
 const Home = () => {
+
+  const {ref, controls} = useScrollAnimation(0.4, false)
+
   return (
     <div
       className="min-h-screen bg-cover bg-center relative res-pad w-full flex"
@@ -18,33 +22,16 @@ const Home = () => {
       <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       <div className="relative z-20 w-full h-screen mx-auto flex items-center justify-center px-2">
-        <div className="w-full h-screen mx-auto flex flex-col-reverse lg:flex-row justify-center items-center gap-10 md:gap-16 xl:gap-2 ">
+        <div className="w-full h-screen mx-auto flex flex-col-reverse lg:flex-row- justify-center items-center gap-10 md:gap-16 xl:gap-2 relative res-pad overflow-x-hidden ">
 
           <motion.div
+            ref={ref}
+            exit="exit"
+            initial="initial"
+            animate={controls}
+            whileInView="animate"
             variants={slideRight(0.5)}
-            initial="initial"
-            whileInView="animate"
-            animate="animate"
-            className="lg:w-xs xl:w-md 2xl:w-2xl mx-auto flex justify-center items-center "
-          >
-            <div className="flex justify-center items-center bg-gray-700 rounded-full p-6">
-              <div className="w-70 h-70 md:w-90 md:h-90 lg:w-86 lg:h-86 xl:w-84 xl:h-84 2xl:w-120 2xl:h-120 rounded-full overflow-hidden bg-gray-400">
-                <img
-                  // src="https://i.postimg.cc/Vk49003B/banner-pic-1.webp"
-                  src="https://i.postimg.cc/P5QwPPPz/photo-3.jpg"
-                  alt="profile"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={slideLeft(0.5)}
-            initial="initial"
-            whileInView="animate"
-            animate="animate"
-            className="lg:flex-1 flex flex-col items-center lg:items-start p-color lg:text-left text-center px-4 md:px-0"
+            className="lg:w-3xl xl:w-full flex flex-col items-center lg:items-start lg:justify-start p-color lg:text-left text-center px-4 md:px-0"
           >
             <p className="text-xl md:text-xl  pb-2 ">
               <span className="text-2xl md:text-2xl s-color"> - </span>{" "}
@@ -68,7 +55,7 @@ const Home = () => {
                 Video Editor
               </span>
             </h2>
-            <p className="py-3 md:py-6 lg:py-6 w-full md:w-lg xl:max-w-xl 2xl:max-w-4xl text-sm md:text-base xl:text-base 2xl:text-xl g-color tracking-wide md:leading-6 xl:leading-6 2xl:leading-10 text-center lg:text-left">
+            <p className="py-3 md:py-6 lg:py-6 w-full md:max-w-xl lg:max-w-2xl xl:max-w-2xl 2xl:max-w-4xl text-sm md:text-base xl:text-base 2xl:text-xl g-color tracking-wide md:leading-6 xl:leading-6 2xl:leading-10 text-center lg:text-left">
               MERN Stack Web Developer focused on building full-stack web apps
               with modern tech. Experienced in MongoDB, Express, React, and
               Node.js. Dedicated to writing clean code and delivering smooth
@@ -86,6 +73,27 @@ const Home = () => {
                   Let's Talk
                 </button>
               </a>
+            </div>
+          </motion.div>
+
+           <motion.div
+            ref={ref}
+            exit="exit"
+            initial="initial"
+            animate={controls}
+            whileInView="animate"
+            variants={slideLeft(0.5)}
+            className=" md:w-xs lg:w-sm xl:w-md 2xl:w-2xl mx-auto flex justify-center items-center lg:absolute lg:right-10 "
+          >
+            <div className="flex justify-center items-center bg-gray-700 rounded-full p-6">
+              <div className="w-70 h-70 md:w-90 md:h-90 lg:w-86 lg:h-86 xl:w-84 xl:h-84 2xl:w-120 2xl:h-120 rounded-full overflow-hidden bg-gray-400">
+                <img
+                  // src="https://i.postimg.cc/Vk49003B/banner-pic-1.webp"
+                  src="https://i.postimg.cc/P5QwPPPz/photo-3.jpg"
+                  alt="profile"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </motion.div>
         </div>

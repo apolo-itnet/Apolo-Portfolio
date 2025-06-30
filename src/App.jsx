@@ -5,6 +5,7 @@ import About from "./Component/About/About";
 import Footer from "./Component/Footer/Footer";
 import Projects from "./Component/Projects/Projects";
 import Contact from "./Component/Contact/Contact";
+import MySkills from "./Component/MySkill/MySkills";
 
 function App() {
   return (
@@ -17,10 +18,13 @@ function App() {
         <Home />
       </section>
 
-      <section className="scroll-smooth bg-neutral-800 text-white">
+      <section className="scroll-smooth bg-neutral-800 text-white ">
         {/* Other sections */}
         <section id="about" className="scroll-mt-20">
           <About />
+        </section>
+        <section id="skill" className="scroll-mt-20">
+          <MySkills/>
         </section>
         <section id="projects" className="scroll-mt-20">
           <Projects />

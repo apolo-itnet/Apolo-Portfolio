@@ -47,11 +47,11 @@ const Navbar = () => {
 
         <nav>
           <ul className="flex items-center space-x-8 poppins font-medium z-50">
-            {["home", "about", "projects", "contact"].map((section) => (
+            {["home", "about", "skill", "projects", "contact"].map((section) => (
               <li key={section}>
                 <a
                   href={`#${section}`}
-                  className="text-sm tracking-wide p-color hover:text-emerald-500 active:text-emerald-400 transition-colors duration-300"
+                  className="text-xs tracking-wide p-color hover:text-emerald-500 active:text-emerald-400 transition-colors duration-300"
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </a>

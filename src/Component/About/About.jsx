@@ -1,11 +1,18 @@
-import { ArrowBigDown, ArrowDown } from "lucide-react";
 import React from "react";
+import { ArrowDown } from "lucide-react";
+import { motion } from "framer-motion";
+import { fadeIn, slideDown, slideLeft, slideRight, slideUp } from "../../Utility/Animation";
 
 const About = () => {
+
   return (
-    <div id="about" className="h-full res-pad py-8">
+     <div id="about" className="w-full h-full res-pad py-8 ">
+
       <div className="about-container w-full flex flex-col lg:flex-row justify-between items-start gap-10 res-pad relative">
-        <div className="about-image w-md h-fit lg:sticky inset-0 top-24">
+
+        <div
+          className="about-image w-md h-fit lg:sticky inset-0 top-24 hidden md:flex justify-center items-center"
+        >
           <div className="bg-neutral-900 p-4 rounded-2xl w-md h-[calc(100vh-80px)]">
             <img
               src="https://i.postimg.cc/Zqfvx2PW/photo-2.jpg"
@@ -15,18 +22,48 @@ const About = () => {
           </div>
         </div>
 
-        <div className="about-content flex-1 pt-6">
-          <div className="main-content">
-            <h1 className="about-heading leading-30 tracking-wide text-4xl sm:text-5xl md:text-8xl lg:text-4xl xl:text-8xl 2xl:text-[10rem] font-thin font-chillax py-4">
-              <span>Apolo</span> <br />
-              <span className="barua tracking-wider">Barua</span> <br />
-              <span className="apurbo tracking-widest s-color">Apurbo</span>
-            </h1>
-            <p className="text-lg barlow w-lg tracking-wider font-normal py-6 ">
+        <div className="about-content w-full flex flex-col  lg:flex-1 pt-6">
+          <div className="main-content flex flex-col justify-center items-start">
+            <motion.h1 className="about-heading leading-20 lg:leading-30 tracking-wide text-7xl sm:text-5xl md:text-8xl lg:text-4xl xl:text-8xl 2xl:text-[10rem] font-thin font-chillax py-4">
+              <motion.span
+                initial="initial"
+                animate="animate"
+                variants={slideRight(0.5)}
+              >
+                Apolo
+              </motion.span>{" "}
+              <br />
+              <motion.span
+                initial="initial"
+                animate="animate"
+                variants={slideLeft(0.7)}
+                className=" tracking-wider"
+              >
+                Barua
+              </motion.span>{" "}
+              <br />
+              <motion.span
+                initial="initial"
+                animate="animate"
+                variants={slideLeft(0.9)}
+                className="tracking-widest s-color"
+              >
+                Apurbo
+              </motion.span>
+            </motion.h1>
+            <motion.p
+              initial="initial"
+              animate="animate"
+              variants={slideUp(1)}
+              className="text-lg poppins font-extralight lg:w-lg tracking-wider py-2 lg:py-6 "
+            >
               "Passionate about web development, I also bring creativity to
               photography and video editing."
-            </p>
-            <a
+            </motion.p>
+            <motion.a
+              initial="initial"
+              animate="animate"
+              variants={slideUp(1)}
               href="#info"
               className="about-me flex justify-start items-center gap-2 py-6"
             >
@@ -34,33 +71,30 @@ const About = () => {
                 <ArrowDown size={20} />
               </span>{" "}
               About Me
-            </a>
+            </motion.a>
           </div>
 
           <div
             id="info"
-            className="detail-content bg-neutral-700 p-4 rounded-2xl p-color w-2xl "
+            className="detail-content bg-neutral-700 p-4 rounded-2xl p-color w-full lg:w-2xl "
           >
-            <h3 className="dl-name text-lg py-2 ">Apolo Barua Apurbo</h3>
-            <h2 className="dl-heading text-4xl font-medium tracking-wide leading-12 py-4">
-              Your Partner in Bringing Your Web Design Vision to Life
+            <h2 className="dl-heading barlow text-3xl text-center font-medium tracking-wide leading-10 py-4">
+              “Full-Stack MERN Developer | Crafting High-Performance &
+              SEO-Optimized Web Applications”
             </h2>
             <p className="dl-para">
-              As a freelance web designer and developer, I bring a unique
-              combination of creativity and technical expertise to every
-              project. With a keen eye for design and a passion for delivering
-              user-friendly web experiences, I work closely with clients to
-              understand their needs and bring their vision to life.
-              <br />
-              <br />
-              My approach is rooted in collaboration and communication, and I
-              take pride in my ability to explain technical concepts in simple
-              terms. Whether I'm developing a new website from scratch or
-              optimizing an existing site for search engines, I always strive
-              for excellence in both form and function. With a dedication to
-              quality and a commitment to staying on top of the latest trends
-              and technologies, I am confident in my ability to deliver
-              exceptional results that exceed my clients' expectations.
+              My programming journey started with a deep curiosity about how
+              websites work behind the scenes. That curiosity turned into a
+              dedication to learn web technologies step by step — starting from
+              HTML, CSS, and JavaScript, to mastering the full MERN stack:
+              MongoDB, Express.js, React.js, and Node.js.
+            </p>
+            <br />
+            <p>
+              I enjoy building full-stack web applications that are not only
+              visually appealing but also fast, scalable, and responsive. From
+              creating custom dashboards to dynamic user interfaces — I love
+              solving real-world problems through clean and efficient code.
             </p>
             <div className="flex rounded-2xl">
               <img
@@ -70,14 +104,19 @@ const About = () => {
               />
             </div>
             <p className="about-des">
-              " I'm a skilled and creative web developer passionate about
-              crafting exceptional designs and user experiences. With a keen eye
-              for detail, I bring stories to life through photography and
-              videography. My expertise in video editing allows me to transform
-              raw footage into engaging narratives. I thrive in blending
-              technology and artistry to create visually stunning and functional
-              projects. Constantly learning and experimenting, I aim to push the
-              boundaries of innovation and creativity in every endeavor. "
+              Outside of programming, I find inspiration in visual storytelling.
+              I'm deeply passionate about photography, videography, and editing
+              — these creative hobbies enhance my design sense and attention to
+              detail. Whether I'm composing a frame or writing code, I bring
+              focus, creativity, and personality to everything I do.
+            </p>
+            <br />
+            <p className="about-des">
+              {" "}
+              As a lifelong learner, I constantly explore new tools and
+              technologies to stay updated. My approach is client-focused,
+              communication-friendly, and results-driven — always aiming to turn
+              ideas into impactful digital solutions.
             </p>
           </div>
         </div>
