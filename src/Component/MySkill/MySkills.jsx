@@ -17,7 +17,12 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import useScrollAnimation from "../../Utility/UseScrollAnm";
-import { slideLeft, slideRight, slideUp } from "../../Utility/Animation";
+import {
+  fadeIn,
+  slideLeft,
+  slideRight,
+  slideUp,
+} from "../../Utility/Animation";
 import { motion } from "framer-motion";
 
 const skillInfo = [
@@ -150,7 +155,7 @@ const skillInfo = [
 
 const categories = ["mern", "frontend", "backend", "tools"];
 
-export default function Skill() {
+const Skill = () => {
   const [activeTab, setActiveTab] = useState("mern");
 
   const { ref: headingRef, controls: headingControls } = useScrollAnimation();
@@ -160,27 +165,33 @@ export default function Skill() {
   return (
     <section
       id="skill"
-      className="w-full h-full lg:h-screen res-pad flex flex-col-reverse lg:flex-row justify-around items-start gap-2 mx-auto res-pad py-6 lg:py-24 overflow-x-hidden"
+      className="w-full min-h-screen mx-auto lg:mt-20 lg:pt-20 py-10 res-pad flex flex-col-reverse lg:flex-row justify-center gap-4 md:gap-10 overflow-hidden"
     >
-      <div className="max-w-3xl">
-
-        <div className="flex justify-center gap-4 flex-wrap mb-6 w-full bg-neutral-800 z-20 py-6">
+      <div className="max-w-3xl z-20">
+        {/* Menu */}
+        <div className="flex justify-center gap-4 flex-wrap lg:mb-6 w-full bg-neutral-800 z-20 md:py-6">
           {categories.map((cat) => (
-            <button
+            <motion.button
               key={cat}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              whileInView={"animate"}
+              variants={fadeIn(0.2)}
               onClick={() => setActiveTab(cat)}
-              className={`px-6 py-4 rounded-2xl text-xs tracking-wide uppercase transition-all ease-in-out duration-300 poppins cursor-pointer ${
+              className={`px-6 py-4 rounded-2xl barlow text-xs font-medium tracking-wider uppercase transition-all ease-in-out duration-300 cursor-pointer ${
                 activeTab === cat
-                  ? "bg-emerald-500 p-color"
+                  ? "bg-emerald-700 p-color"
                   : "bg-gray-700 hover:bg-gray-600"
               }`}
             >
               {cat}
-            </button>
+            </motion.button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 place-items-center w-full ">
+        {/* Skills Card*/}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 place-items-center w-full py-4 md:py-0 ">
           {filteredSkills.map(({ icon, title, description }, index) => (
             <motion.div
               key={title}
@@ -188,21 +199,20 @@ export default function Skill() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
               transition={{ delay: index * 0.1, duration: 0.4 }}
-              className="g-color p-4 rounded-2xl border border-gray-500 hover:border-emerald-500 transition-colors ease-in-out duration-500 w-56 h-44"
+              className="g-color flex flex-col justify-center items-center p-1 py-3 md:py-0 md:p-4 rounded-2xl border border-gray-700 hover:border-emerald-500 transition-colors ease-in-out duration-500 w-full h-46 md:w-56 md:h-44"
             >
               <div className="flex flex-col justify-center items-center text-center gap-2">
-                <p className="flex items-center w-12 h-12 rounded-full border border-emerald-500 p-2">
+                <p className="flex items-center w-12 h-12 rounded-full border border-emerald-500 p-3">
                   {icon}
                 </p>
                 <h4 className="text-xl font-medium font-chillax uppercase tracking-wide">
                   {title}
                 </h4>
-                <p className="text-sm text-gray-300">{description}</p>
+                <p className="text-sm text-gray-300 ">{description}</p>
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
 
       <motion.div
@@ -249,4 +259,6 @@ export default function Skill() {
       </motion.div>
     </section>
   );
-}
+};
+
+export default Skill;

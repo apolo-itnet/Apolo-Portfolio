@@ -10,7 +10,7 @@ import MySkills from "./Component/MySkill/MySkills";
 function App() {
   return (
     <>
-      <section className="fixed w-full h-20 inset-0 top-0 z-50 bg-neutral-900/10 ">
+      <section className="fixed w-full h-fit lg:h-20 inset-0 top-0 z-50 bg-neutral-900/10 ">
         <Navbar />
       </section>
 

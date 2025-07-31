@@ -7,8 +7,10 @@ import "aos/dist/aos.css";
 import App from "./App.jsx";
 
 Aos.init({
-  duration: 800,
-  easing: "ease-in-out",
+  duration: 500,
+  offset: 200,
+  delay: 0,
+  easing: "ease",
   once: false,
 });
 
