@@ -23,9 +23,9 @@ const Contact = () => {
               animate={controls}
               exit={"exit"}
               variants={slideRight(0.3)}
-              className="flex items-center gap-4 "
+              className="flex items-center gap-4 group "
             >
-              <Mail className="text-emerald-700" />
+              <Mail className="text-emerald-700 group-hover:text-emerald-500 transition-colors duration-300 ease-in-out" />
               <p className="text-sm md:text-base">apolo.itnet@gmail.com</p>
             </motion.div>
             <motion.div
@@ -34,9 +34,9 @@ const Contact = () => {
               animate={controls}
               exit={"exit"}
               variants={slideRight(0.35)}
-              className="flex items-center gap-4 "
+              className="flex items-center gap-4 group"
             >
-              <Phone className="text-emerald-700" />
+              <Phone className="text-emerald-700 group-hover:text-emerald-500 transition-colors duration-300 ease-in-out" />
               <p className="text-sm md:text-base">+880 1816 139515</p>
             </motion.div>
             <motion.div
@@ -45,9 +45,9 @@ const Contact = () => {
               animate={controls}
               exit={"exit"}
               variants={slideRight(0.4)}
-              className="flex items-center gap-4 "
+              className="flex items-center gap-4 group"
             >
-              <MapPin className="text-emerald-700" />
+              <MapPin className="text-emerald-700 group-hover:text-emerald-500 transition-colors duration-300 ease-in-out" />
               <p className="text-sm md:text-base">Chittagong, Bangladesh</p>
             </motion.div>
           </motion.div>
@@ -60,9 +60,9 @@ const Contact = () => {
               animate={controls}
               exit={"exit"}
               variants={slideUp(0.5)}
-              className="flex items-center border-b border-white focus-within:border-emerald-700 py-2"
+              className="flex items-center border-b border-white focus-within:border-emerald-500 py-2 transition-colors duration-300 ease-in-out group"
             >
-              <User className=" mr-3 text-emerald-700" />
+              <User className=" mr-3 text-emerald-700 group-hover:text-emerald-500 transition-colors duration-300 ease-in-out" />
               <input
                 type="text"
                 placeholder="Your Name"
@@ -76,9 +76,9 @@ const Contact = () => {
               animate={controls}
               exit={"exit"}
               variants={slideUp(0.55)}
-              className="flex items-center border-b border-white focus-within:border-emerald-700 py-2"
+              className="flex items-center border-b border-white focus-within:border-emerald-500 py-2 transition-colors duration-300 ease-in-out group"
             >
-              <Mail className=" mr-3 text-emerald-700" />
+              <Mail className=" mr-3 text-emerald-700 group-hover:text-emerald-500 transition-colors duration-300 ease-in-out" />
               <input
                 type="email"
                 placeholder="Your Email"
@@ -92,9 +92,9 @@ const Contact = () => {
               animate={controls}
               exit={"exit"}
               variants={slideUp(0.6)}
-              className="flex items-center border-b border-white focus-within:border-emerald-700 py-2"
+              className="flex items-center border-b border-white focus-within:border-emerald-500 py-2 transition-colors duration-300 ease-in-out group"
             >
-              <MessageSquareText className=" mr-3 text-emerald-700" />
+              <MessageSquareText className=" mr-3 text-emerald-700 group-hover:text-emerald-500 transition-colors duration-300 ease-in-out" />
               <textarea
                 placeholder="Your Message"
                 rows="3"

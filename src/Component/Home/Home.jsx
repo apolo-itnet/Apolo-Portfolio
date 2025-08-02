@@ -83,7 +83,12 @@ const Home = () => {
               user experiences.
             </p>
             <div className="flex flex-wrap gap-6 barlow tracking-wider ">
-              <a href="">
+              <a
+                href="https://drive.google.com/uc?export=download&id=11tRkUiGKqWJ9Da5ce2ZEk2v45MVs850j"
+                download="Apolo-Barua-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="text-xs uppercase btn px-4 py-4 btn-outline border-emerald-700 text-white shadow-none hover:bg-emerald-700 transition-color ease-in-out duration-300 ">
                   Download CV
                 </button>

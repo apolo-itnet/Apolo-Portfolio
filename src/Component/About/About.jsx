@@ -125,7 +125,7 @@ const About = () => {
               initial="initial"
               animate={controls}
               variants={fadeIn(0.5)}
-              className="flex rounded-2xl overflow-hidden hidden"
+              className="flex rounded-2xl overflow-hidden lg:hidden"
             >
               <img
                 src="https://i.postimg.cc/xdjbHnmr/photo-1.jpg"
