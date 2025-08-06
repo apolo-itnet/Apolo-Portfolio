@@ -167,17 +167,19 @@ const Skill = () => {
       id="skill"
       className="w-full min-h-screen mx-auto lg:mt-20 lg:pt-20 py-10 res-pad flex flex-col-reverse lg:flex-row justify-center gap-4 md:gap-10 overflow-hidden"
     >
-      <div className="max-w-3xl z-20">
+      <motion.div
+        ref={headingRef}
+        initial="initial"
+        animate={headingControls}
+        exit="exit"
+        variants={slideRight(0.3)}
+        className="max-w-3xl z-20"
+      >
         {/* Menu */}
         <div className="flex justify-center gap-4 flex-wrap lg:mb-6 w-full bg-neutral-800 z-20 md:py-6">
           {categories.map((cat) => (
-            <motion.button
+            <button
               key={cat}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              whileInView={"animate"}
-              variants={fadeIn(0.2)}
               onClick={() => setActiveTab(cat)}
               className={`px-6 py-4 rounded-2xl barlow text-xs font-medium tracking-wider uppercase transition-all ease-in-out duration-300 cursor-pointer ${
                 activeTab === cat
@@ -186,7 +188,7 @@ const Skill = () => {
               }`}
             >
               {cat}
-            </motion.button>
+            </button>
           ))}
         </div>
 
@@ -213,7 +215,7 @@ const Skill = () => {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
 
       <motion.div
         ref={headingRef}
