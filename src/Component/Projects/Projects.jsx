@@ -33,7 +33,7 @@ const projectInfo = [
     ],
     liveLink: "https://medi-rally.web.app/",
     githubLink:
-      "https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-apolo-itnet.git",
+      "https://github.com/apolo-itnet/MediRally-Client",
   },
   {
     id: 2,
